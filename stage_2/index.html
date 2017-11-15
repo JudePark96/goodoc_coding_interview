@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #container {
+        width: 100%;
+        height: 100%;
+      }
+      #header {
+        position: relative;
+        width: 100%;
+        height: 0;
+        background-color: #00cbfc;
+        display:flex;
+        justify-content:center;
+        padding-bottom: 60%;
+      }
+      #header-title {
+        padding-top:2%;
+        color:#ffffff; 
+      }
+      #header-hospital {
+        background-color:#0660b5;
+        color: #ffffff;
+        position: absolute;
+        bottom:2%;
+        width:30%;
+        height: 10%;
+        padding: 2%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      #content {
+        width: 100%;
+        background: #e6e6e6;
+        padding-bottom: 40%;
+        
+      }
+      #content-search {
+        width: 98%;
+        margin: 1%;
+        display: flex;
+        justify-content: center;
+      }
+      #content-pharmacy {
+        background-color:#37db97;
+        color: #ffffff;
+        float: left;
+        padding-left:2%;
+        padding-top:2%;
+        padding-bottom:2%;
+        width: 50%;
+      }
+      #content-hospital {
+        background-color:#54b1ca;
+        color: #ffffff;
+        padding-left:2%;
+        padding-top:2%;
+        padding-bottom:2%;
+        width: 50%;
+      }
+      #content-event {
+        background-color:#f99074;
+        margin: 1%;
+        padding: 2%;
+        color: #ffffff;
+      }
+      #content-cast {
+        background-color:#aa8fb5;
+        margin: 1%;
+        padding: 2%;
+        color: #ffffff;
+      }
+      @media ( max-width: 480px ) {
+        #container {
+            width: auto;
+            height: auto;
+        }
+        #content {
+            width: auto;
+            height: auto;
+        }
+      }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js" ></script>
+    <script type="text/javascript">
+    
+    $(() => {
+      $('#header-hospital').click(() => window.location.replace('https://www.goodoc.co.kr/pharmacies'));
+      $('#content-pharmacy').click(() => window.location.replace('https://www.goodoc.co.kr/pharmacies'));
+      $('#content-hospital').click(() => window.location.replace('https://www.goodoc.co.kr/themes?category_id=225&list_open=1&selected=0'));
+      $('#content-event').click(() => alert('클릭한 부분임!'));
+      $('#content-cast').hover(() => console.log(event.pageX, event.pageY), () => console.log(event.pageX, event.pageY));
+    });
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1 id="header-title">goodoc</h1>
+        <div id="header-hospital">내 주변 병원찾기</div>
+      </div>
+      <div id="content">
+        <div id= "content-search">
+            <div id= "content-pharmacy">내 주변<br/>약국찾기</div>
+            <div id= "content-hospital">상황별<br/>병원찾기</div>
+        </div>
+        <div id= "content-event">병원 이벤트<br/>모아보기</div>
+        <div id= "content-cast">굿닥<br/>캐스트</div>
+      </div>
+    </div>
+  </body>
+</html>
